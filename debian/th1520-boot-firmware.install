@@ -1,0 +1,3 @@
+boot/fw_dynamic.bin
+boot/light_aon_fpga.bin
+boot/light_c906_audio.bin

@@ -1,0 +1,13 @@
+Source: th1520-boot-firmware
+Section: misc
+Priority: optional
+Maintainer: Han Gao <gaohan@iscas.ac.cn>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
+
+Package: th1520-boot-firmware
+Architecture: riscv64
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: th1520 boot firmware addons of the RevyOS

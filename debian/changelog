@@ -1,0 +1,5 @@
+th1520-boot-firmware (2023.07.20) unstable; urgency=medium
+
+  * add boot firmware binary files
+
+ -- Han Gao <gaohan@iscas.ac.cn>  Thu, 20 Jul 2023 01:55:22 +0800
