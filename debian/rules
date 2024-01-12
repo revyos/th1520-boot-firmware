@@ -1,14 +1,21 @@
 #!/usr/bin/make -f
 export DH_VERBOSE = 1
-export DESTDIR = debian/th1520-boot-firmware
 export DEB_BUILD_OPTIONS += nostrip
+export BOOT_DESTDIR = debian/th1520-boot-firmware
+export VENDOR_DESTDIR = debian/th1520-vendor-opensbi
+export MAINLINE_DESTDIR = debian/th1520-mainline-opensbi
+
 
 %:
 	dh $@
 
 override_dh_install:
-	mkdir -p $(CURDIR)/$(DESTDIR)$(PREFIX)/
-	cp -avpr $(CURDIR)/addons/* $(CURDIR)/$(DESTDIR)$(PREFIX)/
+	mkdir -p $(CURDIR)/$(BOOT_DESTDIR)$(PREFIX)/
+	cp -avpr $(CURDIR)/addons/* $(CURDIR)/$(BOOT_DESTDIR)$(PREFIX)/
+	mkdir -p $(CURDIR)/$(VENDOR_DESTDIR)$(PREFIX)/boot
+	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.vendor $(CURDIR)/$(VENDOR_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
+	mkdir -p $(CURDIR)/$(MAINLINE_DESTDIR)$(PREFIX)/boot
+	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.mainline $(CURDIR)/$(MAINLINE_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
 
 override_dh_clean:
 	echo "None"
