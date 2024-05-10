@@ -1,3 +1,12 @@
+th1520-boot-firmware (2024.05.10+sdk1.5.4) unstable; urgency=medium
+
+  * Update light_c906_audio.bin v1.5.4
+    md5sum: 82597daa3f39759bbb1817a0a256e5c2.
+  * Update light_aon_fpga.bin v1.5.4
+    md5usm: 2651cb0adbaf4abc6677bc2da89dea2d
+
+ -- Han Gao <gaohan@iscas.ac.cn>  Fri, 10 May 2024 18:00:51 +0800
+
 th1520-boot-firmware (2024.01.31+sdk1.4.2) unstable; urgency=medium
 
   * Update light_c906_audio.bin v1.4.2
