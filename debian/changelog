@@ -1,3 +1,13 @@
+th1520-boot-firmware (2024.09.20+sdk2.0.2) unstable; urgency=medium
+
+  * Update light_aon_fpga.bin v2.0.2
+    md5usm: 4e6075e403b7bf03cbccc18c37b8a1bd
+  * mainline opensbi commit: b1300c5b9ddb8e7a22352d2d1b8b95d4
+  * Update str.bin
+    https://github.com/revyos/lowpower/releases/tag/20240920
+
+ -- Han Gao <gaohan@iscas.ac.cn>  Fri, 20 Sep 2024 17:02:14 +0800
+
 th1520-boot-firmware (2024.07.20+sdk1.5.7) unstable; urgency=medium
 
   * Update light_aon_fpga.bin v1.5.7
