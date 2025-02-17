@@ -1,28 +1,36 @@
 Source: th1520-boot-firmware
 Section: misc
 Priority: optional
-Maintainer: Han Gao <gaohan@iscas.ac.cn>
+Maintainer: Han Gao <rabenda.cn@gmail.com>
 Build-Depends: debhelper-compat (= 13)
 Standards-Version: 4.6.1
 Rules-Requires-Root: no
 
 Package: th1520-boot-firmware
 Architecture: riscv64
-Depends: th1520-vendor-opensbi | th1520-mainline-opensbi, ${misc:Depends}
+Depends: th1520-vendor-opensbi | th1520-mainline-opensbi | th1520-mainline-opensbi-h, ${misc:Depends}
 Description: th1520 boot firmware addons of the RevyOS
 
 Package: th1520-vendor-opensbi
 Architecture: riscv64
 Depends: ${misc:Depends}
-Conflicts: th1520-mainline-opensbi
+Conflicts: th1520-mainline-opensbi,th1520-mainline-opensbi-h
 Breaks: th1520-boot-firmware (<< 2024.01.12+sdk1.4.2)
 Description: th1520 vendor opensbi of the RevyOS
   https://github.com/revyos/thead-opensbi/tree/lpi4a
 
 Package: th1520-mainline-opensbi
 Architecture: riscv64
-Conflicts: th1520-vendor-opensbi
+Conflicts: th1520-vendor-opensbi,th1520-mainline-opensbi-h
 Breaks: th1520-boot-firmware (<< 2024.01.12+sdk1.4.2)
 Depends: ${misc:Depends}
 Description: th1520 mainline opensbi of the RevyOS
-  https://github.com/revyos/opensbi/tree/th1520-v1.4
+  https://github.com/revyos/opensbi/tree/th1520-v1.6
+
+Package: th1520-mainline-opensbi-h
+Architecture: riscv64
+Conflicts: th1520-vendor-opensbi,th1520-mainline-opensbi
+Breaks: th1520-boot-firmware (<< 2024.01.12+sdk1.4.2)
+Depends: ${misc:Depends}
+Description: th1520 mainline opensbi of the RevyOS
+  https://github.com/revyos/opensbi/tree/th1520-v1.6-h

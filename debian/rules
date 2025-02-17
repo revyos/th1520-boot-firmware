@@ -4,7 +4,7 @@ export DEB_BUILD_OPTIONS += nostrip
 export BOOT_DESTDIR = debian/th1520-boot-firmware
 export VENDOR_DESTDIR = debian/th1520-vendor-opensbi
 export MAINLINE_DESTDIR = debian/th1520-mainline-opensbi
-
+export MAINLINE_H_DESTDIR = debian/th1520-mainline-opensbi-h
 
 %:
 	dh $@
@@ -16,6 +16,8 @@ override_dh_install:
 	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.vendor $(CURDIR)/$(VENDOR_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
 	mkdir -p $(CURDIR)/$(MAINLINE_DESTDIR)$(PREFIX)/boot
 	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.mainline $(CURDIR)/$(MAINLINE_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
+	mkdir -p $(CURDIR)/$(MAINLINE_H_DESTDIR)$(PREFIX)/boot
+	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.h $(CURDIR)/$(MAINLINE_H_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
 
 override_dh_clean:
 	echo "None"

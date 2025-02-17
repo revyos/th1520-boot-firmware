@@ -1,3 +1,10 @@
+th1520-boot-firmware (2025.02.17+sdk2.0.2) unstable; urgency=medium
+
+  * mainline opensbi commit: 8fdf3013d08ed646c04d2ba4e32e7bcd7aefb9e7
+  * mainline opensbi-h commit: 67f9046b6b96aee093894eca3907d8cb73021c1e
+
+ -- Han Gao <rabenda.cn@gmail.com>  Mon, 17 Feb 2025 21:26:33 +0800
+
 th1520-boot-firmware (2024.09.20+sdk2.0.2) unstable; urgency=medium
 
   * Update light_aon_fpga.bin v2.0.2
