@@ -8,29 +8,29 @@ Rules-Requires-Root: no
 
 Package: th1520-boot-firmware
 Architecture: riscv64
-Depends: th1520-vendor-opensbi | th1520-mainline-opensbi | th1520-mainline-opensbi-h, ${misc:Depends}
+Depends: th1520-debian-opensbi | th1520-mainline-opensbi | th1520-mainline-opensbi-h, ${misc:Depends}
 Description: th1520 boot firmware addons of the RevyOS
 
-Package: th1520-vendor-opensbi
+Package: th1520-debian-opensbi
 Architecture: riscv64
 Depends: ${misc:Depends}
 Conflicts: th1520-mainline-opensbi,th1520-mainline-opensbi-h
-Breaks: th1520-boot-firmware (<< 2024.01.12+sdk1.4.2)
-Description: th1520 vendor opensbi of the RevyOS
-  https://github.com/revyos/thead-opensbi/tree/lpi4a
+Breaks: th1520-boot-firmware (<< 2025.02.17+sdk2.0.2)
+Description: th1520 debian opensbi of the RevyOS
+  https://tracker.debian.org/pkg/opensbi
 
 Package: th1520-mainline-opensbi
 Architecture: riscv64
-Conflicts: th1520-vendor-opensbi,th1520-mainline-opensbi-h
-Breaks: th1520-boot-firmware (<< 2024.01.12+sdk1.4.2)
+Conflicts: th1520-debian-opensbi,th1520-mainline-opensbi-h
+Breaks: th1520-boot-firmware (<< 2025.02.17+sdk2.0.2)
 Depends: ${misc:Depends}
 Description: th1520 mainline opensbi of the RevyOS
   https://github.com/revyos/opensbi/tree/th1520-v1.6
 
 Package: th1520-mainline-opensbi-h
 Architecture: riscv64
-Conflicts: th1520-vendor-opensbi,th1520-mainline-opensbi
-Breaks: th1520-boot-firmware (<< 2024.01.12+sdk1.4.2)
+Conflicts: th1520-debian-opensbi,th1520-mainline-opensbi
+Breaks: th1520-boot-firmware (<< 2025.02.17+sdk2.0.2)
 Depends: ${misc:Depends}
 Description: th1520 mainline opensbi of the RevyOS
   https://github.com/revyos/opensbi/tree/th1520-v1.6-h

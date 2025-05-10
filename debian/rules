@@ -2,9 +2,9 @@
 export DH_VERBOSE = 1
 export DEB_BUILD_OPTIONS += nostrip
 export BOOT_DESTDIR = debian/th1520-boot-firmware
-export VENDOR_DESTDIR = debian/th1520-vendor-opensbi
 export MAINLINE_DESTDIR = debian/th1520-mainline-opensbi
 export MAINLINE_H_DESTDIR = debian/th1520-mainline-opensbi-h
+export DEBIAN_DESTDIR = debian/th1520-debian-opensbi
 
 %:
 	dh $@
@@ -12,12 +12,12 @@ export MAINLINE_H_DESTDIR = debian/th1520-mainline-opensbi-h
 override_dh_install:
 	mkdir -p $(CURDIR)/$(BOOT_DESTDIR)$(PREFIX)/
 	cp -avpr $(CURDIR)/addons/* $(CURDIR)/$(BOOT_DESTDIR)$(PREFIX)/
-	mkdir -p $(CURDIR)/$(VENDOR_DESTDIR)$(PREFIX)/boot
-	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.vendor $(CURDIR)/$(VENDOR_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
 	mkdir -p $(CURDIR)/$(MAINLINE_DESTDIR)$(PREFIX)/boot
 	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.mainline $(CURDIR)/$(MAINLINE_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
 	mkdir -p $(CURDIR)/$(MAINLINE_H_DESTDIR)$(PREFIX)/boot
 	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.h $(CURDIR)/$(MAINLINE_H_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
+	mkdir -p $(CURDIR)/$(DEBIAN_DESTDIR)$(PREFIX)/boot
+	cp -avpr $(CURDIR)/opensbi/fw_dynamic.bin.debian $(CURDIR)/$(DEBIAN_DESTDIR)$(PREFIX)/boot/fw_dynamic.bin
 
 override_dh_clean:
 	echo "None"

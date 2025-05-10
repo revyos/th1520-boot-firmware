@@ -1,3 +1,12 @@
+th1520-boot-firmware (2025.05.10+sdk2.0.2) unstable; urgency=medium
+
+  * Add debian prebuilt opensbi
+  * remove vendor opensbi
+  * mainline opensbi commit: 140844b3bd4a6f2919ccd2ff5e93c6222a4f71fb
+  * mainline opensbi-h commit: 83f3e406cf48a0228c0e0738758d48ccfcbb6ae9
+
+ -- Han Gao <rabenda.cn@gmail.com>  Sat, 10 May 2025 12:57:34 +0000
+
 th1520-boot-firmware (2025.02.17+sdk2.0.2) unstable; urgency=medium
 
   * mainline opensbi commit: 8fdf3013d08ed646c04d2ba4e32e7bcd7aefb9e7
